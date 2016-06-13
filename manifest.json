@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "name": "driveLighter",
+  "description": "Highlighter",
+  "version": "1.0",
+
+  "background": {
+    "persistent": false,
+    "page": "background.html"
+  },  
+  "browser_action": {
+	"default_icon": {"128":"img/pen_128.jpg", "48":"img/pen_48.jpg", "16":"img/pen_16.jpg"},
+	"default_title": "driveLighter"
+  },
+  
+  "content_scripts": [
+	{
+	"matches": ["http://*/*","https://*/*"],
+	"js": ["js/content1.js", "js/jquery.js"],
+	"css": ["highlight.css"],
+	"all_frames" : true
+	}],
+
+  "permissions": ["http://*/*","https://*/*"],
+
+  "web_accessible_resources": [ "highlight.css","https://script.google.com/*/*" ]
+}
